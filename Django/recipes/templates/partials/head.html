@@ -15,7 +15,11 @@
         referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css" integrity="sha512-yDUXOUWwbHH4ggxueDnC5vJv4tmfySpVdIcN1LksGZi8W8EVZv4uKGrQc0pVf66zS7LDhFJM7Zdeow1sw1/8Jw==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@500&family=Roboto+Slab:wght@900&family=VT323&display=swap" rel="stylesheet">
+
         <!--Criando a sessão do CSS-->
         <style>
             * {
@@ -29,16 +33,23 @@
             }
             body{
                 font-size:1.6rem;
-                font-family:sans-serif ;
+                font-family:sans-serif;
+                background: rgb(240,248,255);
+
+            }
+
+            h1,h2,h3,h4,h5,h6{
+                font-family: 'Encode Sans', sans-serif;
             }
 
             .container{
                 width: 144rem;
                 margin: 0 auto;
+                padding: 3rem;
             }
 
             .main-header-container{
-                background-color: rgb(30, 144, 255);
+                background-color: rgb(0,191,255);
             }
 
             .main-logo{
@@ -49,10 +60,54 @@
                 flex-flow:  row nowrap;
                 align-items: center;
                 justify-content: center;
-                background-color: red;
                 width: fit-content;
                 margin: 0 auto;
             }
+
+            .main-logo-icon{
+                margin-right: 2rem;
+                
+            }
+
+            .search-form{
+                border: 0.2rem solid black;
+                max-width: 64rem;
+                margin: 0 auto;
+                border-radius: .4rem;
+                position: relative;
+            }
             
+            .search-input,
+            .search-button{
+                border: none;
+                background: none;
+                outline: none;
+                padding: 1rem;
+                
+            }
+            .search-input{
+                width: 100%;
+                padding-right: 3rem;
+            }
+
+            .search-button{
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            .search-button:focus{
+                outline: 1px solid rgb(17, 160, 243);
+                background: rgb(241, 241, 241);
+            }
+            
+            .search-form:focus-within {
+                border-color: rgb(17, 160, 243);
+                background-color: snow;
+            }
+
+            .search-form:focus-within .search-button{
+                color: rgb(17, 160, 243);
+            }
         </style>
 </head>
