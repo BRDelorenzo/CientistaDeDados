@@ -1,18 +1,19 @@
-from flask import Flask, request, Response
+from flask import Flask, request, Response, redirect
 
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "<a href='/posts'>Posts</a>"
+    return "<a href='/posts'>Posts1</a>"
+
+@app.route("/redirect")
+def index():
+    return redirect("/response")
 
 @app.route("/response")
 def  response():
-    headers = {
-        "Content-Type": "text/html"
-        }
-    return Response("uma resposta do servidor", 200, headers=headers)
+    return Response("uma resposta do servidor")
 
 @app.route("/posts")
 @app.route("/posts/<int:id>")
@@ -30,4 +31,4 @@ def posts(id):
     return data
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
